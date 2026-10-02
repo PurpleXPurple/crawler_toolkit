@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="pbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050812"/>
+      <stop offset="100%" stop-color="#0d1b3a"/>
+    </linearGradient>
+    <linearGradient id="boxGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0a0e27"/>
+    </linearGradient>
+    <filter id="pglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#3d4a63"/>
+    </marker>
+    <pattern id="pgrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e2a4a" stroke-width="0.4" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="300" fill="url(#pbg)"/>
+  <rect width="1000" height="300" fill="url(#pgrid)"/>
+
+  <text x="500" y="40" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="12" fill="#4a9eff" letter-spacing="3">— PIPELINE —</text>
+
+  <g id="box1">
+    <rect x="50" y="100" width="180" height="100" rx="10" fill="url(#boxGrad1)" stroke="#4a9eff" stroke-width="1.5"/>
+    <rect x="50" y="100" width="180" height="100" rx="10" fill="none" stroke="#4a9eff" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="140" y="135" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#4a9eff" font-weight="600">imports</text>
+    <text x="140" y="153" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#4a9eff" font-weight="600">_integration</text>
+    <text x="140" y="180" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#7a8699">lazy load · config</text>
+  </g>
+
+  <g id="box2">
+    <rect x="280" y="100" width="180" height="100" rx="10" fill="url(#boxGrad1)" stroke="#a855f7" stroke-width="1.5"/>
+    <rect x="280" y="100" width="180" height="100" rx="10" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="370" y="135" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#a855f7" font-weight="600">info</text>
+    <text x="370" y="153" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#a855f7" font-weight="600">_manager</text>
+    <text x="370" y="180" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#7a8699">logs · SQL · telemetry</text>
+  </g>
+
+  <g id="box3">
+    <rect x="510" y="100" width="180" height="100" rx="10" fill="url(#boxGrad1)" stroke="#ec4899" stroke-width="1.5"/>
+    <rect x="510" y="100" width="180" height="100" rx="10" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <text x="600" y="135" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#ec4899" font-weight="600">crawler</text>
+    <text x="600" y="153" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#ec4899" font-weight="600">_checks</text>
+    <text x="600" y="180" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#7a8699">rate limiter · proxy</text>
+  </g>
+
+  <g id="box4">
+    <rect x="740" y="100" width="180" height="100" rx="10" fill="url(#boxGrad1)" stroke="#22d3ee" stroke-width="1.5"/>
+    <rect x="740" y="100" width="180" height="100" rx="10" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="830" y="135" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#22d3ee" font-weight="600">health</text>
+    <text x="830" y="153" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" fill="#22d3ee" font-weight="600">_checks</text>
+    <text x="830" y="180" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#7a8699">16 checks · TLS · CSP</text>
+  </g>
+
+  <line x1="230" y1="150" x2="280" y2="150" stroke="#3d4a63" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="460" y1="150" x2="510" y2="150" stroke="#3d4a63" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="150" x2="740" y2="150" stroke="#3d4a63" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <circle r="4" fill="#4a9eff" filter="url(#pglow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 230,150 L 280,150"/>
+  </circle>
+  <circle r="4" fill="#a855f7" filter="url(#pglow)">
+    <animateMotion dur="2s" begin="0.7s" repeatCount="indefinite" path="M 460,150 L 510,150"/>
+  </circle>
+  <circle r="4" fill="#ec4899" filter="url(#pglow)">
+    <animateMotion dur="2s" begin="1.4s" repeatCount="indefinite" path="M 690,150 L 740,150"/>
+  </circle>
+  <circle r="3" fill="#22d3ee" filter="url(#pglow)">
+    <animateMotion dur="2s" begin="0.35s" repeatCount="indefinite" path="M 230,150 L 280,150"/>
+  </circle>
+  <circle r="3" fill="#4a9eff" filter="url(#pglow)">
+    <animateMotion dur="2s" begin="1.05s" repeatCount="indefinite" path="M 460,150 L 510,150"/>
+  </circle>
+  <circle r="3" fill="#a855f7" filter="url(#pglow)">
+    <animateMotion dur="2s" begin="1.75s" repeatCount="indefinite" path="M 690,150 L 740,150"/>
+  </circle>
+
+  <text x="500" y="245" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#3d4a63">no circular deps · imports_integration is a leaf · every module talks to info_manager</text>
+
+  <text x="500" y="275" text-anchor="middle" font-family="ui-monospace, monospace" font-size="10" fill="#3d4a63">your scraper ─▶ limiter ─▶ curl_cffi ─▶ selectolax ─▶ health_checks</text>
+</svg>

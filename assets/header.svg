@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="1000" height="280" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="50%" stop-color="#0d1b3a"/>
+      <stop offset="100%" stop-color="#1a0e2e"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a9eff">
+        <animate attributeName="stop-color" values="#4a9eff;#a855f7;#ec4899;#4a9eff" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#a855f7">
+        <animate attributeName="stop-color" values="#a855f7;#ec4899;#4a9eff;#a855f7" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ec4899">
+        <animate attributeName="stop-color" values="#ec4899;#4a9eff;#a855f7;#ec4899" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a9eff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4a9eff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#4a9eff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2a4a" stroke-width="0.5"/>
+    </pattern>
+    <clipPath id="revealClip">
+      <rect x="80" y="120" width="0" height="60">
+        <animate attributeName="width" from="0" to="900" dur="2s" fill="freeze"/>
+      </rect>
+    </clipPath>
+    <clipPath id="scanClip">
+      <rect x="60" y="106" width="880" height="104" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1000" height="280" fill="url(#bgGrad)"/>
+  <rect width="1000" height="280" fill="url(#grid)"/>
+
+  <circle cx="0" cy="0" r="220" fill="#4a9eff" filter="url(#softGlow)" opacity="0.15">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1000" cy="280" r="220" fill="#ec4899" filter="url(#softGlow)" opacity="0.15">
+    <animate attributeName="opacity" values="0.15;0.25;0.15" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <rect x="60" y="80" width="880" height="130" rx="8" fill="#050812" stroke="#1e2a4a" stroke-width="1"/>
+  <path d="M 60 88 Q 60 80 68 80 L 932 80 Q 940 80 940 88 L 940 106 L 60 106 Z" fill="#0a0f1e"/>
+
+  <circle cx="80" cy="93" r="5" fill="#ff5f56"/>
+  <circle cx="98" cy="93" r="5" fill="#ffbd2e"/>
+  <circle cx="116" cy="93" r="5" fill="#27c93f"/>
+
+  <text x="500" y="97" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#7a8699">~/crawler_toolkit $</text>
+
+  <g clip-path="url(#scanClip)">
+    <rect x="60" y="80" width="880" height="3" fill="url(#scanGrad)">
+      <animate attributeName="y" from="80" to="210" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g clip-path="url(#revealClip)">
+    <text x="80" y="160" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-weight="700" font-size="44" fill="url(#titleGrad)" filter="url(#glow)">crawler_toolkit</text>
+  </g>
+
+  <rect x="80" y="138" width="10" height="30" fill="#4a9eff" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0;1" dur="0.9s" begin="0s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="80" y="192" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="14" fill="#7a8699" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.2s" fill="freeze"/>
+    <tspan fill="#4a9eff">async</tspan><tspan fill="#3d4a63"> · </tspan><tspan fill="#a855f7">rate-limited</tspan><tspan fill="#3d4a63"> · </tspan><tspan fill="#ec4899">health-checked</tspan><tspan fill="#3d4a63"> · </tspan><tspan fill="#22d3ee">SQLite-backed</tspan>
+  </text>
+
+  <text x="80" y="248" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11" fill="#4a9eff" opacity="0">
+    <animate attributeName="opacity" from="0" to="0.9" dur="0.5s" begin="2.6s" fill="freeze"/>
+    <tspan fill="#22d3ee">✓</tspan> rate limiter online
+    <tspan fill="#22d3ee" dx="24">✓</tspan> health checks loaded
+    <tspan fill="#22d3ee" dx="24">✓</tspan> telemetry ready
+  </text>
+</svg>

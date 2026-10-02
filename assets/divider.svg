@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" width="1200" height="60" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4a9eff" stop-opacity="0.2"/>
+      <stop offset="25%" stop-color="#a855f7" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ec4899" stop-opacity="0.9"/>
+      <stop offset="75%" stop-color="#22d3ee" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4a9eff" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#4a9eff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="dglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <path fill="url(#waveGrad2)" filter="url(#dglow)">
+    <animate attributeName="d"
+      values="M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30 L 1200 60 L 0 60 Z; M 0 30 Q 150 50 300 30 T 600 30 T 900 30 T 1200 30 L 1200 60 L 0 60 Z; M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30 L 1200 60 L 0 60 Z"
+      dur="4s" repeatCount="indefinite"/>
+  </path>
+
+  <path fill="none" stroke="url(#waveGrad)" stroke-width="1.5">
+    <animate attributeName="d"
+      values="M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30; M 0 30 Q 150 50 300 30 T 600 30 T 900 30 T 1200 30; M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30"
+      dur="4s" repeatCount="indefinite"/>
+  </path>
+
+  <circle r="2.5" fill="#4a9eff">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30"/>
+  </circle>
+  <circle r="2" fill="#ec4899">
+    <animateMotion dur="6s" begin="2s" repeatCount="indefinite" path="M 1200 30 Q 1050 50 900 30 T 600 30 T 300 30 T 0 30"/>
+  </circle>
+  <circle r="2" fill="#22d3ee">
+    <animateMotion dur="6s" begin="4s" repeatCount="indefinite" path="M 0 30 Q 150 10 300 30 T 600 30 T 900 30 T 1200 30"/>
+  </circle>
+</svg>

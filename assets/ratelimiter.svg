@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="waterGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="headerRule" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="40%" stop-color="#dc2626"/>
+      <stop offset="60%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <filter id="glowRed" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowWhite" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#141414" stroke-width="1"/>
+    </pattern>
+    <clipPath id="bucketClip">
+      <path d="M 180 140 L 380 140 L 350 280 L 210 280 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="340" fill="#0a0a0a"/>
+  <rect width="800" height="340" fill="url(#grid)"/>
+
+  <text x="400" y="42" text-anchor="middle"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="11" fill="#888888" letter-spacing="8">RATE LIMITER</text>
+
+  <line x1="200" y1="60" x2="600" y2="60" stroke="url(#headerRule)" stroke-width="1"/>
+
+  <circle cx="188" cy="60" r="3" fill="#dc2626" filter="url(#glowRed)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="280" y="102" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="9" fill="#666666" letter-spacing="3">TOKENS / SEC</text>
+
+  <g filter="url(#glowRed)">
+    <circle cx="250" cy="120" r="3" fill="#dc2626">
+      <animate attributeName="cy" values="112;140" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.15" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="120" r="3" fill="#ffffff">
+      <animate attributeName="cy" values="112;140" dur="1.4s" begin="0.35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.15" dur="1.4s" begin="0.35s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="310" cy="120" r="3" fill="#dc2626">
+      <animate attributeName="cy" values="112;140" dur="1.4s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.15" dur="1.4s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="265" cy="120" r="2" fill="#ffffff">
+      <animate attributeName="cy" values="112;140" dur="1.4s" begin="0.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.15" dur="1.4s" begin="0.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="295" cy="120" r="2" fill="#ffffff">
+      <animate attributeName="cy" values="112;140" dur="1.4s" begin="0.55s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.15" dur="1.4s" begin="0.55s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g clip-path="url(#bucketClip)">
+    <rect x="180" y="210" width="200" height="100" fill="url(#waterGrad)">
+      <animate attributeName="y" values="215;200;215;205;215" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <path d="M 180 140 L 380 140 L 350 280 L 210 280 Z"
+        fill="none" stroke="#ffffff" stroke-width="1.5"/>
+
+  <path d="M 180 140 L 380 140" stroke="#dc2626" stroke-width="2.5" filter="url(#glowRed)"/>
+
+  <path d="M 210 280 L 350 280" stroke="#dc2626" stroke-width="1.5" opacity="0.4"/>
+
+  <text x="280" y="248" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="34" font-weight="700" fill="#ffffff">3</text>
+  <text x="280" y="266" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="8" fill="#ffffff" opacity="0.75" letter-spacing="3">TOKENS</text>
+
+  <path d="M 540 210 A 70 70 0 0 1 680 210"
+        fill="none" stroke="#1a1a1a" stroke-width="14" stroke-linecap="round"/>
+
+  <path d="M 540 210 A 70 70 0 0 1 610 140"
+        fill="none" stroke="url(#gaugeGrad)" stroke-width="14"
+        stroke-linecap="round" filter="url(#glowWhite)"/>
+
+  <line x1="540" y1="210" x2="528" y2="222" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="610" y1="140" x2="610" y2="124" stroke="#666666" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="680" y1="210" x2="692" y2="222" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/>
+
+  <circle cx="610" cy="140" r="4" fill="#dc2626" filter="url(#glowRed)">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate"
+                      values="-1.5 610 210;1.5 610 210;-1.5 610 210"
+                      dur="4s" repeatCount="indefinite"/>
+    <line x1="610" y1="210" x2="610" y2="148"
+          stroke="#dc2626" stroke-width="3" stroke-linecap="round" filter="url(#glowRed)"/>
+  </g>
+
+  <circle cx="610" cy="210" r="6" fill="#0a0a0a" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="610" cy="210" r="2" fill="#ffffff"/>
+
+  <text x="610" y="258" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="24" font-weight="700" fill="#ffffff">1.0</text>
+  <text x="610" y="276" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="8" fill="#666666" letter-spacing="3">REQ / SEC</text>
+
+  <g transform="translate(60,232)" font-family="ui-monospace, monospace" font-size="10">
+    <circle cx="0" cy="0" r="3.5" fill="#ffffff"/>
+    <text x="14" y="3.5" fill="#888888">2xx holds rate</text>
+
+    <circle cx="0" cy="22" r="3.5" fill="#dc2626" filter="url(#glowRed)"/>
+    <text x="14" y="25.5" fill="#888888">429 halves rate</text>
+
+    <circle cx="0" cy="44" r="3.5" fill="#7f1d1d"/>
+    <text x="14" y="47.5" fill="#888888">5xx drops 25%</text>
+  </g>
+
+  <text x="400" y="322" text-anchor="middle"
+        font-family="ui-monospace, monospace"
+        font-size="9" fill="#444444" letter-spacing="3">PER-HOST STATE · PERSISTED TO SQLITE · SURVIVES RESTARTS</text>
+
+</svg>
