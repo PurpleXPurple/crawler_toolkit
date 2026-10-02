@@ -1,13 +1,15 @@
+---
+
 <div align="center">
 
 <img src="assets/header.svg" alt="crawler_toolkit" width="100%"/>
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-4a9eff?style=for-the-badge&logo=python&logoColor=white&labelColor=0a0e27)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-a855f7?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=0a0e27)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-ec4899?style=for-the-badge&labelColor=0a0e27)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-a855f7?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=0a0e27)](https://github.com/PurpleXPurple/crawler_toolkit/blob/main/LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-ec4899?style=for-the-badge&labelColor=0a0e27)](https://github.com/PurpleXPurple/crawler_toolkit/blob/main/CHANGELOG.md)
 
-[![Tests](https://img.shields.io/github/actions/workflow/status/your-handle/crawler_toolkit/test.yml?style=for-the-badge&label=tests&labelColor=0a0e27&color=22d3ee)](https://github.com/your-handle/crawler_toolkit/actions)
-[![Lint](https://img.shields.io/github/actions/workflow/status/your-handle/crawler_toolkit/lint.yml?style=for-the-badge&label=lint&labelColor=0a0e27&color=22d3ee)](https://github.com/your-handle/crawler_toolkit/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/PurpleXPurple/crawler_toolkit/test.yml?style=for-the-badge&label=tests&labelColor=0a0e27&color=22d3ee)](https://github.com/PurpleXPurple/crawler_toolkit/actions)
+[![Lint](https://img.shields.io/github/actions/workflow/status/PurpleXPurple/crawler_toolkit/lint.yml?style=for-the-badge&label=lint&labelColor=0a0e27&color=22d3ee)](https://github.com/PurpleXPurple/crawler_toolkit/actions)
 
 [![curl_cffi](https://img.shields.io/badge/curl__cffi-0.6%2B-4a9eff?style=for-the-badge&labelColor=0a0e27)](https://github.com/yifeikong/curl_cffi)
 [![selectolax](https://img.shields.io/badge/selectolax-0.3%2B-a855f7?style=for-the-badge&labelColor=0a0e27)](https://github.com/rushter/selectolax)
@@ -306,11 +308,11 @@ crawler_toolkit/
 ├── .github/
 │   ├── workflows/
 │   │   ├── test.yml
-│   │   └── lint.yml
-│   ├── ISSUE_TEMPLATE/
-│   │   └── config.yml
-│   ├── dependabot.yml
-│   └── FUNDING.yml
+│   │   ├── lint.yml
+│   │   ├── dependabot.yml
+│   │   └── FUNDING.yml
+│   └── ISSUE_TEMPLATE/
+│       └── config.yml
 ├── pyproject.toml
 ├── CHANGELOG.md
 ├── LICENSE
@@ -348,7 +350,7 @@ Issues and pull requests welcome. Before opening a PR:
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [`LICENSE`](https://github.com/PurpleXPurple/crawler_toolkit/blob/main/LICENSE).
 
 <div align="center">
 <img src="assets/divider.svg" alt="" width="100%"/>
